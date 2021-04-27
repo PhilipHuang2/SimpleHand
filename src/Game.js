@@ -19,7 +19,11 @@ export const SimpleHand = {
     moves:{
         clickCard: (G,ctx, id) => {
             G.total += G.hand[id];
+            let newHand = G.hand.slice();
+            newHand.splice(id,1);
+            G.hand = newHand;
         },
+
     },
 
     endIf: (G,ctx) => {

@@ -7,7 +7,6 @@ export class SimpleHandBoard extends React.Component {
     }
     onClick(id) {
         this.props.moves.clickCard(id);
-        
     }
 
     render(G)
