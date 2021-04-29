@@ -1,12 +1,15 @@
-// import './SimpleCard.css';
 import logo from './logo.svg';
 import React from 'react';
 import Card from 'react-bootstrap/Card';
 
-
 class SimpleCard extends React.Component{
     
     render (props) {
+        console.log("This is the card data.", this.props.json)
+        const name = this.props.json.Name;
+        const description = this.props.json.Description;
+        console.log(", name: ", name, ", description: ", description)
+
         const style1 = {
             border: "1px solid #555",
             width: '200px',
@@ -21,15 +24,15 @@ class SimpleCard extends React.Component{
         };
         return(
             <Card 
-                classname="Border" 
+                id="Border" 
                 style = {style1} 
             >
-                <Card.Title classname="Title">
-                    {this.props.name}
+                <Card.Title id="Title">
+                    {name}
                 </Card.Title>
-                <Card.Img classname = "Image" src={logo} style = {style2} />
-                <Card.Body classname = "Description">
-                    {this.props.description}
+                <Card.Img id = "Image" src={logo} style = {style2} />
+                <Card.Body id = "Description">
+                    {description}
                 </Card.Body>
             </Card>
       );

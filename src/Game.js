@@ -9,7 +9,8 @@ function isDraw(total) {
 export const SimpleHand = {
     setup: () => ({
         total: 0,
-        hand: Array(7).fill().map((item, index) => 1 + index),        
+        // hand: Array(7).fill().map((item, index) => 1 + index),   
+        hand: [0,1,2,0,1,2,0],     
     }),
 
     turn: {
@@ -17,8 +18,8 @@ export const SimpleHand = {
     },
 
     moves:{
-        clickCard: (G,ctx, id) => {
-            G.total += G.hand[id];
+        clickCard: (G,ctx, id,input) => {
+            G.total = G.total + input;
             let newHand = G.hand.slice();
             newHand.splice(id,1);
             G.hand = newHand;
